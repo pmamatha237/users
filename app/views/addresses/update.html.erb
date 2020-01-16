@@ -1,0 +1,14 @@
+<br/><br/>
+ Update Address : <br/><br/>
+<%= form_for @address do |address| %>
+    User_id : <%= address.number_field :user_id %><br/><br/>
+    Name: <%= address.text_field :name %><br/><br/>
+    Street: <%= address.text_field :Street %><br/><br/>
+    City: <%= address.text_field :city %><br/><br/>
+    State: <%= address.text_field :state %><br/><br/>
+    Country: <%= address.text_field :Country %><br/><br/>
+<%= address.submit %>
+
+
+<%= button_to "Back", addresses_index_path , method: :get %>
+<% end %>

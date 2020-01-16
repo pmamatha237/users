@@ -1,0 +1,11 @@
+Edit Address : <br/><br/>
+<%= form_for @address do |f| %>
+    User_id : <%= f.number_field :user_id %><br/><br/>
+    Name : <%= f.text_field :name %><br/><br/>
+    Street: <%= f.text_field :street %><br/><br>
+    City: <%= f.text_field :city %><br/><br/>
+    State: <%= f.text_field :state %><br/><br/>
+    Country: <%= f.text_field :country %><br/><br/>
+<%= f.submit %>
+<%= button_to "Back", addresses_path, method: :get %>
+<% end %>

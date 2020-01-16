@@ -1,0 +1,10 @@
+<ul>
+	
+	<% if user_signed_in? %>
+	<li> <%= link_to 'Sign Out', destroy_user_session_path, method: 'delete' %> </li>
+	<% else %>
+	<li> <h3>If User have an Account, Sign In :</h3> <%= link_to 'Sign In', new_user_session_path %> </li>
+	<li> <h3> Sign Up User: </h3><%= link_to 'Sign Up', new_user_registration_path %> </li>
+	<% end %>
+</ul>
+

@@ -1,0 +1,31 @@
+<h1> Create Address </h1>
+
+
+<%= form_for @address do |f| %>
+    User_id : <%= f.number_field :user_id %><br/><br/>
+    Name : <%= f.text_field :name %><br/><br/>
+    Street :<%= f.text_field :street %><br/><br/>
+    City: <%= f.text_field :city %><br/><br/>
+    State: <%= f.text_field :state %><br/><br/>
+    Country: <%= f.text_field :country %><br/><br/>
+<%= f.submit %>
+<%= link_to "Back", addresses_path, method: :get %>
+<% end %>
+
+<style>
+  .notice {
+    
+    color: blue;
+    font-size: 25px;
+}
+ .error {
+    color:red;
+    font-size: 25px;
+ }
+</style>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% else %>
+   <div class="error"><%= flash.now[:error] %></div>
+<% end %>
+  

@@ -1,0 +1,32 @@
+<h1> User Information </h1>
+<style>
+  .notice {
+    
+    color: blue;
+    font-size: 25px;
+}
+ .error {
+    color:red;
+    font-size: 25px;
+ }
+</style>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% else %>
+   <div class="error"><%= flash.now[:error] %></div>
+<% end %><br/><br/>
+<table>
+  
+<th><strong>User Id</strong></th>
+<th><strong>Name</strong></th>
+<% @addresses.each do |address| %>
+ <tr>
+    <th><%= address.user_id %></th>
+    <th><%= address.name %></th>
+<th> <%= button_to "Show", address_path(address), method: :get %>
+<th> <%= button_to "Edit", edit_address_path(address), method: :get %><th>
+<th><%= button_to 'Remove', address_path(address), method: 'delete', data: { confirm: 'Are you sure?' } %></th>	
+<% end %></table>
+<br/><br/>
+<%= button_to "Add Address", new_address_path , method: :get %><br/>
